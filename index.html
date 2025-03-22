@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @property --gradient-angle{
+        syntax: '<angle>';
+        inherits: false;
+        initial-value: 0deg;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282828;
+        }
+        .container {
+            position: absolute;
+            text-align: center;
+            padding: 80px;
+            border: 1px solid #444;
+            border-radius: 1px;
+            max-width: 400px;
+            background-color: #282828;
+        }
+        .profile-box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        border-radius: 10px;
+        z-index: 2;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .profile-box::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 10px;
+        background: conic-gradient(from var(--gradient-angle), #ffffff, #00000000, #ffffff);
+        z-index: -1;
+        filter: blur(8px);
+        animation: rotateGlow 15s linear infinite;
+    }
+    .underscore {
+        animation: blink 1.5s step-end infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+        
+    }
+    @keyframes rotateGlow {
+        0% {
+            --gradient-angle: 0deg;
+        }
+        100% {
+        --gradient-angle: 360deg;
+        }
+    }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 15px;
+            color: #cfcfcf;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-link {
+            color: #919191;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        .social-link:hover {
+            color: #0077cc;
+        }
+        .description {
+            color: #b5b5b5;
+            font-size: 18px;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 20px;
+        }
+        .gradient-bg {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+            background: linear-gradient(40deg, #282828, #292929, #313131, #323232);
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(1px);
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-box">
+            <img src="pfp.jpg" alt="Profile Picture" class="profile-image">
+        </div>
+        <div class="name">karlow<span class="underscore">_</span></div>
+        <div class="description">congratulations</div>
+        <div class="social-links">
+            <a href="https://github.com/kar-low" target="_blank" class="social-link">GitHub</a>
+            <a href="https://www.last.fm/user/kar_low" target="_blank" class="social-link">last.fm</a>
+        </div>
+    </div>
+    <div class="gradient-bg"></div>
+ 
+
+
+
+
+</body>
+</html>
